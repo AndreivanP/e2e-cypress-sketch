@@ -2,14 +2,14 @@
   "stats": {
     "suites": 1,
     "tests": 1,
-    "passes": 0,
+    "passes": 1,
     "pending": 0,
-    "failures": 1,
-    "start": "2022-06-02T16:58:20.863Z",
-    "end": "2022-06-02T16:58:23.925Z",
-    "duration": 3062,
+    "failures": 0,
+    "start": "2022-06-03T21:30:01.390Z",
+    "end": "2022-06-03T21:30:04.326Z",
+    "duration": 2936,
     "testsRegistered": 1,
-    "passPercent": 0,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,53 +18,49 @@
   },
   "results": [
     {
-      "uuid": "da57a2d4-3503-4641-b013-7f4c64c5c073",
+      "uuid": "af62336b-748e-434e-841b-07f61cf0c9a2",
       "title": "",
-      "fullFile": "cypress/integration/login.test.ts",
-      "file": "cypress/integration/login.test.ts",
+      "fullFile": "cypress/integration/updates.test.ts",
+      "file": "cypress/integration/updates.test.ts",
       "beforeHooks": [],
       "afterHooks": [],
       "tests": [],
       "suites": [
         {
-          "uuid": "be4a9a5e-4e97-4ae7-8e61-2a9810e90bc7",
-          "title": "On login page",
+          "uuid": "84cd822f-2d82-41af-9c9e-f07bd3f508ff",
+          "title": "On updates page",
           "fullFile": "",
           "file": "",
           "beforeHooks": [],
           "afterHooks": [],
           "tests": [
             {
-              "title": "Should login with valid credentials",
-              "fullTitle": "On login page Should login with valid credentials",
+              "title": "Should see label new in sketch",
+              "fullTitle": "On updates page Should see label new in sketch",
               "timedOut": null,
-              "duration": 923,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 2899,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "// Prepare\nconst LOGIN = {\n    username: USER.username,\n    password: USER.password,\n};\nLOGIN.username = Cypress.env('SKETCH_USER');\nconsole.log(LOGIN.username);\n// Execute\ncy.submitLogin(Cypress.env('SKETCH_USER'), Cypress.env('SKETCH_PASS'));\n// Assert",
-              "err": {
-                "message": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type",
-                "estack": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type\n    at Context.type (https://www.sketch.com/__cypress/runner/cypress_runner.js:154656:76)\n    at Context.<anonymous> (https://www.sketch.com/__cypress/runner/cypress_runner.js:173141:19)\nFrom Your Spec Code:\n    at Context.submitLogin (https://www.sketch.com/__cypress/tests?p=cypress/support/index.ts:130:37)",
-                "diff": null
-              },
-              "uuid": "e7fe816b-c565-4f17-a79d-6a8eaa5fc39c",
-              "parentUUID": "be4a9a5e-4e97-4ae7-8e61-2a9810e90bc7",
+              "code": "// Assert\ncy.contains(updateElements.labelNew).should('exist');",
+              "err": {},
+              "uuid": "639e288f-159a-4ce9-b334-334a830608a3",
+              "parentUUID": "84cd822f-2d82-41af-9c9e-f07bd3f508ff",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "e7fe816b-c565-4f17-a79d-6a8eaa5fc39c"
+          "passes": [
+            "639e288f-159a-4ce9-b334-334a830608a3"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 923,
+          "duration": 2899,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -94,7 +90,7 @@
         "useInlineDiffs": false,
         "code": true
       },
-      "version": "6.2.2"
+      "version": "6.3.1"
     },
     "marge": {
       "options": {

@@ -1,0 +1,12 @@
+version: "3.1"
+
+services:
+  e2e-runner:
+    image: cypresstests
+    container_name: e2e-cypress-runner
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8081:8081"
+    stdin_open: true  
