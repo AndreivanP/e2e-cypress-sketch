@@ -18,6 +18,7 @@ import './commands'
 import '../page/login/index'
 import '../utils/index'
 import '../page/global/index'
+import '../page/updates/index'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
