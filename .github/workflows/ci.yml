@@ -1,0 +1,24 @@
+name: CI workflow
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-deploy-run-e2e:
+    runs-on: ubuntu-latest
+    steps:
+       - uses: actions/checkout@v2
+         with:
+          ref: ${{ github.event.pull_request.head.sha }}
+       - name: Make envfile
+         uses: SpicyPizza/create-envfile@v1.3
+         with:
+          envkey_CYPRESS_SKETCH_USER: ${{ secrets.CYPRESS_SKETCH_USER }}
+          envkey_CYPRESS_SKETCH_PASS: ${{ secrets.CYPRESS_SKETCH_PASS }}
+       - name: Build docker image
+         run: cd docker && docker-compose -f docker-compose.yml build
+       - name: Create docker container Cypress runner
+         run: cd docker && docker-compose -f docker-compose.yml up -d
+       - name: Run e2e tests within cypress runner container
+         run: cd docker && docker-compose -f docker-compose.yml exec -T e2e-runner npm run cy:regression
