@@ -1,0 +1,30 @@
+{
+    "baseUrl": "http://app-asset-management-stg.herokuapp.com/",
+    "video": false,
+    "defaultCommandTimeout": 10000,
+    "viewportWidth": 1440,
+    "viewportHeight": 900,
+    "chromeWebSecurity": false,
+    "reporter": "mochawesome",
+    "filterLoad": "proxy/companies",
+    "screenshotsFolder": "mochawesome-report/assets",
+    "retries":{
+      "runMode": 1,
+      "openMode": 1
+    },
+    "reporterOptions": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+     },
+    "env": {
+            "auth_url": "http://api-asset-management-stg.herokuapp.com/authenticate",
+            "auth_username": "Staging",
+            "auth_password": "123456",
+            "scope": "openid",
+            "filterLoad": "proxy/companies",
+            "useFixtures": false,
+            "release_notes": "/releases"
+          }
+  }
