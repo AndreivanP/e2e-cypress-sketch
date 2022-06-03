@@ -1,0 +1,144 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json",
+      "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint"],
+    "extends": [
+      "airbnb",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:cypress/recommended"
+    ],
+    "rules": {
+      // Soft some rules.
+      "camelcase": 0,
+      "class-methods-use-this": 0, // Will be set to error soon
+      "comma-dangle": [2, {
+        "arrays": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline",
+        "objects": "always-multiline",
+        "functions": "never"
+      }],
+      "comma-style": ["error", "last"],
+      "no-console": 0,
+      "func-names": 0, // This rule doesn't correspond very well with function generators
+      "function-paren-newline": 0,
+      "global-require": 0, // Used by webpack-isomorphic-tools and React Native.
+      "import/imports-first": 0, // Este sorts by atom/sort-lines natural order.
+      "import/no-unresolved": [2, { "ignore": ["@catenamedia/admin-on-rest"] }],
+      "import/extensions": 0,
+      "import/no-cycle": 0, //reseted to version 15
+      "import/no-useless-path-segments": 0, //reseted to version 15
+      "import/prefer-default-export": 0, // Why to force default export?
+      "linebreak-style": 0,
+      "lines-between-class-members": 0, //reseted to version 15
+      "prefer-destructuring": 0, //reseted to version 15
+      "prefer-promise-reject-errors": [0, { "allowEmptyReject": true }], //reseted to version 15
+      "max-len": [2, { "code": 160 }],
+      "new-cap": [2, {"capIsNew": false, "newIsCap": true}], // For Record() etc.
+      "no-class-assign": 0, // Class assign is used for higher order components.
+      "no-confusing-arrow": 0, // This rule is super confusing.
+      "no-inline-styles": 0,
+      "no-nested-ternary": 0, // It's nice for JSX.
+      "no-param-reassign": 0, // We love param reassignment. Naming is hard.
+      "no-plusplus": 0, // An error in future
+      "no-shadow": 0, // Shadowing is a nice language feature. Naming is hard.
+      "no-underscore-dangle": 0, // It's classic pattern to denote private props.
+      "no-useless-catch": 0, //reseted to version 15
+      "no-async-promise-executor": 0, //reseted to version 15
+      "no-mixed-operators": 0, // JS handles that very well
+      "no-multiple-empty-lines": [ "error", { "max": 1 } ],
+      "no-multi-spaces": "error",
+      "no-extra-semi": "error",
+      "no-empty": "error",
+      "no-dupe-keys": "error",
+      "no-dupe-else-if": "error",
+      "operator-linebreak" : ["error", "before"],
+      "multiline-ternary": 0,
+      "space-in-parens": ["error", "never"],
+      "object-curly-spacing": ["error", "always"],
+      "arrow-parens": ["error", "as-needed"],
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "builtin", // node "builtin" modules
+            "external", // external modules
+            "internal",  // alias webpack
+            "parent",  // relative imports
+            "sibling"  // local imports
+          ],
+          "newlines-between": "always"
+        }
+      ],
+      "object-curly-newline": 0, //reseted to version 15
+      "implicit-arrow-linebreak": 0, //reseted to version 15
+      "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+      "import/no-named-as-default": 0,
+      "no-named-as-default": 0,
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
+      "no-unused-vars": "off",
+      "@typescript-eslint/no-unused-vars": "off",
+      "@typescript-eslint/no-implicit-this": "off",
+      "@typescript-eslint/ban-ts-comment": "off",
+      "@typescript-eslint/explicit-module-boundary-types": [
+        "error",
+        {
+          "allowedNames": ["styles"]
+        }
+      ],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "format": ["StrictPascalCase"],
+          "prefix": ["I"],
+          "selector": "interface"
+        },
+        {
+          "format": ["StrictPascalCase"],
+          "prefix": ["T"],
+          "selector": ["typeAlias"]
+        },
+        {
+          "format": ["StrictPascalCase"],
+          "prefix": ["E"],
+          "selector":"enum"
+        }
+      ],
+      "@typescript-eslint/member-delimiter-style": [
+        "error",
+        {
+          "multiline": {
+            "delimiter": "comma",
+            "requireLast": true
+          },
+          "singleline": {
+            "delimiter": "comma",
+            "requireLast": false
+          }
+        }
+      ],
+      "@typescript-eslint/await-thenable": ["error"],
+      "@typescript-eslint/no-misused-promises": ["error"],
+      "@typescript-eslint/no-unnecessary-type-assertion": ["error"],
+      "@typescript-eslint/prefer-includes": ["error"],
+      "@typescript-eslint/prefer-string-starts-ends-with": ["error"],
+      "@typescript-eslint/unbound-method": ["error"]
+    },
+    "settings": {
+      "import/parsers": {
+        "@typescript-eslint/parser": [".test.ts", ".ts", ".tsx"]
+      },
+      "import/resolver": {
+        "typescript": {
+          "project": "./"
+        }
+      }
+    }
+  }

@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+      "target": "ES6",
+      "lib": [
+        "esnext",
+        "dom"
+      ],
+      "allowJs": true,
+      "skipLibCheck": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "strict": true,
+      "downlevelIteration": true,
+      "forceConsistentCasingInFileNames": true,
+      "module": "esnext",
+      "moduleResolution": "node",
+      "resolveJsonModule": true,
+      "isolatedModules": false,
+      "noEmit": true,
+      "types": ["cypress", "faker", "node"],
+      "noImplicitThis": false,
+      "baseUrl": "./",
+    },
+    "include": [
+      "./**/*.ts",
+      "./cypress/*.ts",
+      "./cypress/**/*.ts"
+    ]
+  }

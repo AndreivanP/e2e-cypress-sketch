@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-06-02T16:59:03.318Z",
+    "end": "2022-06-02T16:59:06.293Z",
+    "duration": 2975,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "d7b5de02-9bf8-46b8-9ecf-516afe060335",
+      "title": "",
+      "fullFile": "cypress/integration/login.test.ts",
+      "file": "cypress/integration/login.test.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6a5f13bd-122f-4e79-9e3a-aca78ba94435",
+          "title": "On login page",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Should login with valid credentials",
+              "fullTitle": "On login page Should login with valid credentials",
+              "timedOut": null,
+              "duration": 918,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "// Prepare\nconst LOGIN = {\n    username: USER.username,\n    password: USER.password,\n};\nLOGIN.username = Cypress.env('SKETCH_USER');\nconsole.log(LOGIN.username);\n// Execute\ncy.submitLogin(Cypress.env('SKETCH_USER'), Cypress.env('SKETCH_PASS'));\n// Assert",
+              "err": {
+                "message": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type",
+                "estack": "CypressError: `cy.type()` can only accept a string or number. You passed in: `undefined`\n\nhttps://on.cypress.io/type\n    at Context.type (https://www.sketch.com/__cypress/runner/cypress_runner.js:154656:76)\n    at Context.<anonymous> (https://www.sketch.com/__cypress/runner/cypress_runner.js:173141:19)\nFrom Your Spec Code:\n    at Context.submitLogin (https://www.sketch.com/__cypress/tests?p=cypress/support/index.ts:130:37)",
+                "diff": null
+              },
+              "uuid": "24cf0ccc-b54a-471a-aac3-13732bf6cb33",
+              "parentUUID": "6a5f13bd-122f-4e79-9e3a-aca78ba94435",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "24cf0ccc-b54a-471a-aac3-13732bf6cb33"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 918,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
