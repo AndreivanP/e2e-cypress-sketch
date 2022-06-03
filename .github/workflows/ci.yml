@@ -18,7 +18,7 @@ jobs:
           envkey_CYPRESS_SKETCH_PASS: ${{ secrets.CYPRESS_SKETCH_PASS }}
        - name: Build docker image
          run: cd docker && docker-compose -f docker-compose.yml build
-       - name: Create docker containers Cypress runner
+       - name: Create docker container Cypress runner
          run: cd docker && docker-compose -f docker-compose.yml up -d
-       - name: Run e2e tests within cypress container
+       - name: Run e2e tests within cypress runner container
          run: cd docker && docker-compose -f docker-compose.yml exec -T e2e-runner npm run cy:regression
