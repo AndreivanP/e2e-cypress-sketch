@@ -7,7 +7,7 @@
     "chromeWebSecurity": false,
     "reporter": "mochawesome",
     "filterLoad": "proxy/companies",
-    "screenshotsFolder": "mochawesome-report/assets",
+    "screenshotsFolder": "mochawesome-report",
     "retries":{
       "runMode": 1,
       "openMode": 1

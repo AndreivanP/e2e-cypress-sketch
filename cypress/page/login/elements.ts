@@ -9,5 +9,3 @@ export const ELEMENTS = {
     invalidEmailError: 'This is not a valid email',
     eyeIcon: '[data-testid="eye-icon"]'
   };
-
-
