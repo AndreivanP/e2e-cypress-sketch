@@ -17,7 +17,7 @@ Demo test automation framework using Cypress
 
     `$ npm install`
 
-3. It's mandatory to create a `.env` file on root directory containing username and password of an user who is able to sign in on sketch website. This file must follow the pattern specified on [.env.example](.env.example) file present on the root project's directory.
+3. It's mandatory to create a `.env` file on root directory containing username and password of an user who is able to sign in on sketch website. This file must follow the pattern specified on [.env.example](.env.example)
 
 ## CLI commands
 ### Test Execution
@@ -80,12 +80,14 @@ e2e-cypress-sketch/
 - :file_folder: [cypress/](cypress): Directory with all related test framework folders and files
     - :file_folder: [integration/](cypress/integration): Directory with test case files
         - :page_with_curl: [login.test.ts](cypress/integration/login.test.ts) Test file containing tests to cover signin functionality.
-        - :page_with_curl: [updates.test.ts](cypress/integration/updates.test.ts) Test file containing a simple test to demonstrate the use of the App actions pattern where the login is performed through the local storaged.
-    - :file_folder: [page/](cypress/page): Directory with folders specified by every UI page
-        - :file_folder: [page/login](cypress/page/login/): Directory with files containing elements and functionalities for login page
-            - :page_with_curl: [elements.ts](cypress/page/login/elements.ts) File containing the UI elements from the login page
-            - :page_with_curl: [index.ts](cypress/page/login/index.ts) File containing functions which interacts with login page. On this file there is a Cypress custom command to perform login using the UI which is used when validating such functionality as well as an App Action function to perform login using local storaged which is recommended to be used in all other tests so the setup can be faster and reliable.
-- :page_with_curl: [.env.example](.env.example) File with the env variables needed for tests work propely. From this file it should be created a `.env` with the variables populated.
+        - :page_with_curl: [updates.test.ts](cypress/integration/updates.test.ts) Test file containing a simple test to demonstrate the use of the App actions pattern where the login is performed through the local storage.
+    - :file_folder: [page/](cypress/page): Directory with folders holding elements and methods for every UI page.
+        - :file_folder: [page/login](cypress/page/login/): Directory with files containing elements and functionalities for the login page.
+            - :page_with_curl: [elements.ts](cypress/page/login/elements.ts) File containing UI elements from the login page.
+            - :page_with_curl: [index.ts](cypress/page/login/index.ts) File that holds functions which interacts with login page. On this file there is a Cypress custom command to perform login using the UI which is used when validating such functionality as well as an App Action function to perform login using local storage which is recommended to be used in all other tests so the setup can be faster and reliable.
+     - :file_folder: [utils/](cypress/utils): Directory with files holding global functions to help on the testing setup.
+     - :page_with_curl: [tsconfig.json](tsconfig.json) Typescript file which specifies the root files and the compiler options required to compile the project.
+- :page_with_curl: [.env.example](.env.example) File with the env variables needed for tests to work properly. From this file it should be created a `.env` with the variables populated.
 - :page_with_curl: [cypress.json](cypress.json) File containing important Cypress configs.
 - :page_with_curl: [package.json](package.json) File holding the project's dependencies.
 
