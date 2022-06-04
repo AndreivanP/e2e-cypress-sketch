@@ -43,7 +43,7 @@ Run `npm run cy:regression` to run all the tests on headless mode using Chrome b
 
 ### Design
 
-* Across the QA community a hot topic is about whether use Page Objects pattern is the best option when using Cypress. One of the reasons is due the fact Cypress provides some built in functionalities such as custom commands which could be used to sctructue a new test pattern called App Actions. For this project it's being used a combination of Page Objects and Cypress best practices.
+* Across the QA community a hot topic is about whether use Page Objects pattern is the best option when using Cypress. One of the reasons for such debate is due the fact Cypress provides some built in functionalities such as custom commands which could be used to sctructue a new test pattern called App Actions. For this project it's being used a combination of Page Objects and Cypress best practices.
 
 ### Detailed folder structure
 
@@ -86,7 +86,7 @@ e2e-cypress-sketch/
             - :page_with_curl: [elements.ts](cypress/page/login/elements.ts) File containing UI elements from the login page.
             - :page_with_curl: [index.ts](cypress/page/login/index.ts) File that holds functions which interacts with login page. On this file there is a Cypress custom command to perform login using the UI which is used when validating such functionality as well as an App Action function to perform login using local storage which is recommended to be used in all other tests so the setup can be faster and reliable.
      - :file_folder: [utils/](cypress/utils): Directory with files holding global functions to help on the testing setup.
-     - :page_with_curl: [tsconfig.json](tsconfig.json) Typescript file which specifies the root files and the compiler options required to compile the project.
+    - :page_with_curl: [tsconfig.json](tsconfig.json) Typescript file which specifies the root files and the compiler options required to compile the project.
 - :page_with_curl: [.env.example](.env.example) File with the env variables needed for tests to work properly. From this file it should be created a `.env` with the variables populated.
 - :page_with_curl: [cypress.json](cypress.json) File containing important Cypress configs.
 - :page_with_curl: [package.json](package.json) File holding the project's dependencies.
