@@ -4,7 +4,7 @@ const faker = require('faker');
 
 class Utils {
   setRandomName() {
-    return faker.name.findName();
+    return faker.name.lastName();
   }
 
   setRandomEmail(alias: any) {
