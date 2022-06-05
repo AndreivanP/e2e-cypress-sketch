@@ -10,7 +10,7 @@ const LOGIN = {username: '',
 describe('On login page', () => {
   beforeEach(() => {
     cy.visitLogin();
-});
+  });
 
   it('Should login with valid credentials', () => {
     // Prepare

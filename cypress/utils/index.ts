@@ -17,9 +17,9 @@ class Utils {
 
   setExpireCookieDate() {
     var date = new Date();
-        date.setTime(date.getTime() + (1*3*60*60*1000));
+    date.setTime(date.getTime() + (1 * 3 * 60 * 60 * 1000));
 
-    return date.toUTCString() ;
+    return date.toUTCString();
   }
 }
 
