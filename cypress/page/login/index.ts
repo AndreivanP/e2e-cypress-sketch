@@ -5,20 +5,22 @@ declare global {
       submitLogin: typeof submitLogin,
       visitLogin: typeof visitLogin,
       submitLoginLocalStorage: typeof submitLoginLocalStorage,
+      forgotPasswordFlow: typeof forgotPasswordFlow,
       setInterval: typeof setInterval,
     }
   }
-}
+};
 
 const pageElements = require('./elements').ELEMENTS;
 
 export function visitLogin(): void {
   cy.visit('/signin');
 
+  cy.contains(pageElements.signToSketch).should('exist');
   cy.get(pageElements.inputEmail).should('exist');
   cy.get(pageElements.inputPass).should('exist');
   cy.contains(pageElements.btnSignin).should('exist');
-}
+};
 
 Cypress.Commands.add('visitLogin', visitLogin);
 
@@ -29,7 +31,7 @@ export function submitLogin(user: string, pass: string, showPass: boolean = fals
     cy.get(pageElements.eyeIcon).click();
   }
   cy.contains(pageElements.btnSignin).click();
-}
+};
 
 Cypress.Commands.add('submitLogin', submitLogin);
 
@@ -44,13 +46,11 @@ export function submitLoginLocalStorage(endpoint = ''): void {
       password: Cypress.env('SKETCH_PASS'),
       grant_type: 'password',
     },
-
   };
 
   cy.request(options).then((resp: any) => resp.body).then((body: any) => {
     const access_token = body.access_token;
     const refresh_token = body.refresh_token;
-    const token_type = body.token_type;
     const expires_at = new Date().getTime() + body.expires_in;
 
     window.localStorage.setItem('user:allAuthorizations', JSON.stringify([
@@ -74,6 +74,15 @@ export function submitLoginLocalStorage(endpoint = ''): void {
     },
     failOnStatusCode: false
   });
-}
+};
 
 Cypress.Commands.add('submitLoginLocalStorage', submitLoginLocalStorage);
+
+export function forgotPasswordFlow(): void {
+  cy.get(pageElements.hrefForgot).click();
+  cy.get(pageElements.hrefSignin).click();
+};
+
+Cypress.Commands.add('forgotPasswordFlow', forgotPasswordFlow);
+
+

@@ -4,35 +4,35 @@
 Demo test automation framework using Cypress
 
 # Pre Requirements
-- It's needed to have `npm` version greater than 8.0.0 installed.
-- It's needed to have `node js` version greater than 14.0.0 installed.
+- `npm` version greater than 8.0.0 installed.
+- `node js` version greater than 14.0.0 installed.
 
 ## Setup
 
 1. Clone and access the cloned repo folder:
 
-    `$ git clone git@github.com:AndreivanP/e2e-cypress-sketch.git && e2e-cypress-sketch`
+    `$ git clone git@github.com:AndreivanP/e2e-cypress-sketch.git && cd e2e-cypress-sketch`
 
 2. Install the project dependencies:
 
     `$ npm install`
 
-3. It's mandatory to create a `.env` file on root directory containing username and password of an user who is able to sign in on sketch website. This file must follow the pattern specified on [.env.example](.env.example)
+3. It's mandatory to create a `.env` file in the root directory containing username and password of an user who is able to sign in on sketch website. This file must follow the pattern specified on [.env.example](.env.example)
 
 ## CLI commands
 ### Test Execution
 
-Run `npm run cy:open`, to open the Cypress Test Runner.
+Run `npm run cy:open`, to open Cypress Test Runner.
 
 Run `npm run cy:regression` to run all the tests on headless mode using Chrome browser.
 
 ### Relevant optional parameters
 
 * from Cypress
-  * `--browser chrome`, to set browser (default is Electron)
-  * `--headless`, to headless execution (default for Electron)
-  * `--headed`, to non headless execution (default for Chrome/Firefox)
-  * `--spec '<file-path>/test-file.test.ts'`, to run specific test file
+  * `--browser chrome`, to set browser (default is Electron).
+  * `--headless`, to headless execution (default for Electron).
+  * `--headed`, to non headless execution (default for Chrome/Firefox).
+  * `--spec '<file-path>/test-file.test.ts'`, to run specific test file.
 
 ## Test Architecture
 ### Tools
@@ -43,7 +43,7 @@ Run `npm run cy:regression` to run all the tests on headless mode using Chrome b
 
 ### Design
 
-* Across the QA community a hot topic is about whether use Page Objects pattern is the best option when using Cypress. One of the reasons for such debate is due the fact Cypress provides some built in functionalities such as custom commands which could be used to sctructue a new test pattern called App Actions. For this project it's being used a combination of Page Objects and Cypress best practices.
+* Across the QA community a hot topic is about whether use Page Objects pattern is the best option when using Cypress. One of the reasons for such debate is due the fact Cypress provides some built in functionalities such as custom commands which could be used to sctructue a new test pattern called App Actions. For this project it's being used a combination of Page Objects and Cypress best practices. More details can be found in the next section.
 
 ### Detailed folder structure
 
@@ -77,8 +77,8 @@ e2e-cypress-sketch/
 
 ```
 
-- :file_folder: [cypress/](cypress): Directory with all related test framework folders and files
-    - :file_folder: [integration/](cypress/integration): Directory with test case files
+- :file_folder: [cypress/](cypress): Directory with all related test framework folders and files.
+    - :file_folder: [integration/](cypress/integration): Directory with test case files.
         - :page_with_curl: [login.test.ts](cypress/integration/login.test.ts) Test file containing tests to cover signin functionality.
         - :page_with_curl: [updates.test.ts](cypress/integration/updates.test.ts) Test file containing a simple test to demonstrate the use of the App actions pattern where the login is performed through the local storage.
     - :file_folder: [page/](cypress/page): Directory with folders holding elements and methods for every UI page.
